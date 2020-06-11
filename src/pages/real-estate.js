@@ -4,10 +4,10 @@ import React from 'react';
 import MainLayout from '../components/ui/MainLayout';
 
 /** Page Component */
-const NotFoundPage = () => (
+const RealEstate = () => (
     <MainLayout>
-        <h1>404</h1>
+        <h1>Propiedades</h1>
     </MainLayout>
 )
 
-export default NotFoundPage
+export default RealEstate
