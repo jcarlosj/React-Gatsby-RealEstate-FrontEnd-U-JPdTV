@@ -10,6 +10,7 @@ import BackgroundImage from 'gatsby-background-image';
 
 /** Components */
 import MainLayout from '../components/ui/MainLayout';
+import Banner from '../components/ui/Banner';
 
 /** Hooks */
 import useIndexPage from '../hooks/useIndexPage';
@@ -48,9 +49,10 @@ const IndexPage = () => {
                         text-align: center;
                     `}>{ content }</p>
                 </div>
+                <Banner />
             </main>
         </MainLayout>
     )
 }
 
-export default IndexPage
+export default IndexPage;
