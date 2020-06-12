@@ -5,7 +5,7 @@ const useIndexPage = () => {
     /** Query GraphQL */
     const response = useStaticQuery( graphql `
         query {
-            allStrapiPages( filter: { title :{ eq: "Home" } } ), {
+            allStrapiPages( filter: { slug :{ eq: "home" } } ), {
                 nodes {
                     title
                     content
@@ -22,7 +22,12 @@ const useIndexPage = () => {
     `);
 
     console .log( 'useIndexPage', response );
-
+    
+    return response .allStrapiPages .nodes .map( index => ({
+        title: index .title,
+        content: index .content,
+        image: index .image
+    }));
 }
 
 export default useIndexPage;

@@ -28,6 +28,10 @@ const MainLayout = ({ children }) => {
                         line-height: 2;
                     }
 
+                    h1 {
+                        text-align: center;
+                    }
+
                     h1, h2, h3 {
                         line-height: 1.5;
                         margin: 0;

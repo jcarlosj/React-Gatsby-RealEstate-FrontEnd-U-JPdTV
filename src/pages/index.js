@@ -1,5 +1,8 @@
 import React from 'react';
 
+/** Dependencies */
+import { css } from '@emotion/core';
+
 /** Components */
 import MainLayout from '../components/ui/MainLayout';
 
@@ -9,11 +12,23 @@ import useIndexPage from '../hooks/useIndexPage';
 /** Page Component */
 const IndexPage = () => {
     
-    useIndexPage();
+    const 
+        dataPage = useIndexPage(),
+        { title, content, image } = dataPage[ 0 ];
     
     return (
         <MainLayout>
-            <h1>Index</h1>
+            <main>
+                <div css={ css `
+                    margin: 0 auto;
+                    width: 80rem;
+                `}>
+                    <h1>{ title }</h1>
+                    <p css={ css `
+                        text-align: center;
+                    `}>{ content }</p>
+                </div>
+            </main>
         </MainLayout>
     )
 }
