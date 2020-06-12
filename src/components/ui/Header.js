@@ -9,24 +9,7 @@ import styled from '@emotion/styled';
 import Navigation from './Navigation';
 
 /** Style Components */
-const Logo = styled( Link ) `
-    color: white;
-    display: flex;
-    text-decoration: none;
-
-    h2 {
-        padding-left: 1rem;
-
-        span {
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-    }
-
-    img {
-        width: 4rem;
-    }
-`;
+import Logo from './style/Logo';
 
 /** Component */
 const Header = () => {
