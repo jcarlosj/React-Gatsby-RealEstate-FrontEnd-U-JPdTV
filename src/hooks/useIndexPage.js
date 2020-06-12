@@ -10,7 +10,11 @@ const useIndexPage = () => {
                     title
                     content
                     image {
-                        publicURL
+                        sharp: childImageSharp {
+                            fluid( maxWidth: 1200 ) {
+                                ...GatsbyImageSharpFluid_withWebp
+                            }
+                        }
                     }
                 }
             }
@@ -18,6 +22,7 @@ const useIndexPage = () => {
     `);
 
     console .log( 'useIndexPage', response );
+
 }
 
 export default useIndexPage;
