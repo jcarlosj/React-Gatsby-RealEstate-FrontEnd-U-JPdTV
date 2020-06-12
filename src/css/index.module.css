@@ -1,0 +1,22 @@
+.bgImg {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 120rem;
+}
+
+.title {
+    font-size: 2rem;
+    margin: 0;
+    max-width: 80rem;
+}
+
+@media ( min-width: 992px ) {
+    .title {
+        font-size: 4rem;
+    }
+}
