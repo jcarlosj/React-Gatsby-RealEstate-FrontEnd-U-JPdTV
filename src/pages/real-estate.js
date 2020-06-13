@@ -1,7 +1,7 @@
 import React from 'react';
 
 /** Components */
-import MainLayout from '../components/ui/MainLayout';
+import MainLayout from '../components/layout/MainLayout';
 
 /** Page Component */
 const RealEstate = () => (

@@ -9,7 +9,7 @@ import styled from '@emotion/styled';
 import BackgroundImage from 'gatsby-background-image';
 
 /** Components */
-import MainLayout from '../components/ui/MainLayout';
+import MainLayout from '../components/layout/MainLayout';
 import Banner from '../components/ui/Banner';
 
 /** Hooks */

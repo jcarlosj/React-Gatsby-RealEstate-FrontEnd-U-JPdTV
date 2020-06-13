@@ -9,7 +9,7 @@ import styled from '@emotion/styled';
 import Navigation from './Navigation';
 
 /** Style Components */
-import Logo from './style/Logo';
+import Logo from '../style/Logo';
 
 /** Component */
 const Header = () => {
