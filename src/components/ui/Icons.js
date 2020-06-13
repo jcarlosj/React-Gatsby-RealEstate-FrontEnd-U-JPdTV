@@ -1,6 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+/** Style Components */
+import PropertyIcons from '../style/PropertyIcons';
+
 /** Component */
 const Icons = ({ rooms, bathrooms, parking_lot }) => {
 
@@ -23,7 +26,7 @@ const Icons = ({ rooms, bathrooms, parking_lot }) => {
     const pathIcons = icons .edges;
 
     return( 
-        <ul>
+        <PropertyIcons>
             <li>
                 <img src={ pathIcons[ 1 ] .node .publicURL } alt="Habitaciones" />
                 <p>{ rooms }</p>
@@ -36,7 +39,7 @@ const Icons = ({ rooms, bathrooms, parking_lot }) => {
                 <img src={ pathIcons[ 0 ] .node .publicURL } alt="Parqueadero" />
                 <p>{ parking_lot }</p>
             </li>
-        </ul>
+        </PropertyIcons>
     );
 }
 
