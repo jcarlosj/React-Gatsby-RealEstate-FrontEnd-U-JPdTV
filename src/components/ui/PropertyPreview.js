@@ -1,5 +1,8 @@
 import React from 'react';
 
+/** Components */
+import Icons from './Icons';
+
 /** Component */
 const PropertyPreview = ({ property }) => {
 
@@ -11,6 +14,11 @@ const PropertyPreview = ({ property }) => {
                 <h3>{ name }</h3>
                 <p>{ description }</p>
                 <p>{ price }</p>
+                <Icons 
+                    rooms={ rooms }
+                    bathrooms={ bathrooms }
+                    parking_lot={ parking_lot }
+                />
             </li>
         </>
     );
