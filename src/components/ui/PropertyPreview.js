@@ -3,23 +3,26 @@ import React from 'react';
 /** Components */
 import Icons from './Icons';
 
+/** Style Components */
+import Card from '../style/Card';
+
 /** Component */
 const PropertyPreview = ({ property }) => {
 
     const { name, description, price, rooms, bathrooms, parking_lot, category, agent, picture } = property;
 
     return(
-        <> 
-            <li>
+        <Card>
+            <div className="card-content">
                 <h3>{ name }</h3>
-                <p>{ price }</p>
+                <p className="price">$ { price }</p>
                 <Icons 
                     rooms={ rooms }
                     bathrooms={ bathrooms }
                     parking_lot={ parking_lot }
                 />
-            </li>
-        </>
+            </div>
+        </Card>
     );
 }
 
