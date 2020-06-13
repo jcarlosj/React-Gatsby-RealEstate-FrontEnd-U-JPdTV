@@ -1,7 +1,7 @@
 import React from 'react';
 
 /** Style Modules */
-import indexStyle from '../css/index.module.css';
+import indexStyle from '../css/modules/index.module.css';
 
 /** Dependencies */
 import { css } from '@emotion/core';

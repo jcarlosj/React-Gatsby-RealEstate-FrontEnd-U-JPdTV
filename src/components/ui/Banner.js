@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 /** Style Modules */
-import indexStyle from '../../css/index.module.css';
+import indexStyle from '../../css/modules/index.module.css';
 
 /** Dependencies */
 import styled from '@emotion/styled';
