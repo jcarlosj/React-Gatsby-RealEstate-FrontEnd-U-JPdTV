@@ -11,6 +11,7 @@ import BackgroundImage from 'gatsby-background-image';
 /** Components */
 import MainLayout from '../components/layout/MainLayout';
 import Banner from '../components/ui/Banner';
+import PropertiesList from '../components/ui/PropertiesList';
 
 /** Hooks */
 import useIndexPage from '../hooks/useIndexPage';
@@ -50,6 +51,7 @@ const IndexPage = () => {
                     `}>{ content }</p>
                 </div>
                 <Banner />
+                <PropertiesList />
             </main>
         </MainLayout>
     )

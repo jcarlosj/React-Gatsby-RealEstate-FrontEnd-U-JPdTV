@@ -35,6 +35,19 @@ const useProperties = () => {
     ` );
 
     console .log( 'useProperties', response );
+
+    return response .allStrapiRealEstate .nodes .map( property => ({
+        id: property .id,
+        name: property .name,
+        description: property .description,
+        price: property .price,
+        rooms: property .rooms,
+        bathrooms: property .bathrooms,
+        parking_lot: property .parking_lot,
+        category: property .category,
+        agent: property .agent,
+        picture: property .picture
+    }));
 }
 
 export default useProperties;
