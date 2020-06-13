@@ -12,7 +12,6 @@ const PropertyPreview = ({ property }) => {
         <> 
             <li>
                 <h3>{ name }</h3>
-                <p>{ description }</p>
                 <p>{ price }</p>
                 <Icons 
                     rooms={ rooms }
