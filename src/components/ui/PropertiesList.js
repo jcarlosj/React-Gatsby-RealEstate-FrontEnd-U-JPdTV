@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 /** Styles */
 import '../../css/properties-list.css';
 
+/** Style Modules */
+import propertiesList from '../../css/modules/properties-list.module.css';
+
 /** Components */
 import PropertyPreview from './PropertyPreview';
 
@@ -27,7 +30,7 @@ const PropertiesList = () => {
             
             { ! properties
                 ?   <p>No hay propiedades disponibles</p>
-                :   <ul>
+                :   <ul className={ propertiesList .properties }>
                         { 
                             properties .map( property => (
                                 <PropertyPreview 
