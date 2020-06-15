@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'gatsby-image';
 
 /** Components */
 import Icons from './Icons';
@@ -13,6 +14,9 @@ const PropertyPreview = ({ property }) => {
 
     return(
         <Card>
+            <Image 
+                fluid={ picture .sharp .fluid }
+            />
             <div className="card-content">
                 <h3>{ name }</h3>
                 <p className="price">$ { price }</p>
