@@ -43,7 +43,12 @@ const IndexPage = () => {
             <main>
                 <div css={ css `
                     margin: 0 auto;
-                    width: 80rem;
+                    max-width: 95%;
+                    width: 100%;
+
+                    @media ( min-width: 768px ) {
+                        width: 80rem;            
+                    }
                 `}>
                     <h1>{ title }</h1>
                     <p css={ css `
