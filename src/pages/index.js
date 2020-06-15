@@ -1,7 +1,7 @@
 import React from 'react';
 
 /** Style Modules */
-import indexStyle from '../css/modules/index.module.css';
+import bgImgStyle from '../assets/css/modules/background-image.module.css';
 
 /** Dependencies */
 import { css } from '@emotion/core';
@@ -36,8 +36,8 @@ const IndexPage = () => {
                 fluid={ fluid }
                 fadeIn="soft"
             >
-                <div className={ indexStyle .bgImg }>
-                    <h1 className={ indexStyle .title }>Venta y alquiler de casas y apartamentos exclusivos</h1>
+                <div className={ bgImgStyle .bgImg }>
+                    <h1 className={ bgImgStyle .title }>Venta y alquiler de casas y apartamentos exclusivos</h1>
                 </div>
             </Background>
             <main>

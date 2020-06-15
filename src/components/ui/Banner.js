@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 /** Style Modules */
-import indexStyle from '../../css/modules/index.module.css';
+import bgimgStyle from '../../assets/css/modules/background-image.module.css';
 
 /** Dependencies */
 import styled from '@emotion/styled';
@@ -39,8 +39,8 @@ const Banner = () => {
             fluid={ fluid }
             fadeIn="soft"
         >
-            <div className={ indexStyle .bgImg }>
-                <h2 className={ indexStyle .title }>Encuentra el hogar de tus sueños</h2>
+            <div className={ bgimgStyle .bgImg }>
+                <h2 className={ bgimgStyle .title }>Encuentra el hogar de tus sueños</h2>
                 <p>Con 15 años de experiencia en el sector</p>
             </div>
         </Background>

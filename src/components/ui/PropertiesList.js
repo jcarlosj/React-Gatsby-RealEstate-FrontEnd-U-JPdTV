@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 /** Styles */
-import '../../css/properties-list.css';
+import '../../assets/css/ui-properties-list.css';
 
 /** Style Modules */
-import propertiesList from '../../css/modules/properties-list.module.css';
+import prpListStyle from '../../assets/css/modules/properties-list.module.css';
 
 /** Components */
 import PropertyPreview from './PropertyPreview';
@@ -30,7 +30,7 @@ const PropertiesList = () => {
             
             { ! properties
                 ?   <p>No hay propiedades disponibles</p>
-                :   <ul className={ propertiesList .properties }>
+                :   <ul className={ prpListStyle .properties }>
                         { 
                             properties .map( property => (
                                 <PropertyPreview 
