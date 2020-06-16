@@ -39,7 +39,7 @@ exports .createPages = async ({ actions, graphql, reporter }) => {
         /** Crea páginas dinámicamente */
         actions .createPage({
             path: urlSlug( realEstate .name ),                                  // Convierte un string en un slug y asigna como ruta para la nueva página
-            component: require .resolve( './src/components/ui/Property.js' )    // Componente que renderiza la apariencia de la página (No olvidar la extensión del archivo o fallará)
+            component: require .resolve( './src/components/page/Property.js' )  // Componente que renderiza la apariencia de la página (No olvidar la extensión del archivo o fallará)
         });
     });
 
