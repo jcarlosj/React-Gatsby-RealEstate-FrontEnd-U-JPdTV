@@ -31,15 +31,16 @@ exports .createPages = async ({ actions, graphql, reporter }) => {
 
     const registers = response .data .allStrapiRealEstate .nodes;
 
-    console .log( 'createPages', registers );
+    // console .log( 'createPages', registers );
 
     /** Recorre cada registro obtenido */
     registers .forEach( realEstate => {
-        const slug = urlSlug( realEstate .name );       // Convierte un string en un slug
 
-        console .group( 'name', realEstate .name );
-        console .log( 'slug', slug );    
-        console .groupEnd();
+        /** Crea páginas dinámicamente */
+        actions .createPage({
+            path: urlSlug( realEstate .name ),                                  // Convierte un string en un slug y asigna como ruta para la nueva página
+            component: require .resolve( './src/components/ui/Property.js' )    // Componente que renderiza la apariencia de la página (No olvidar la extensión del archivo o fallará)
+        });
     });
 
 }
