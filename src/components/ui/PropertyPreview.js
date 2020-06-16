@@ -1,11 +1,15 @@
 import React from 'react';
 import Image from 'gatsby-image';
 
+/** Dependencies */
+import urlSlug from 'url-slug';
+
 /** Components */
 import Icons from './Icons';
 
 /** Style Components */
 import Card from '../style/Card';
+import Button from '../style/Button';
 
 /** Component */
 const PropertyPreview = ({ property }) => {
@@ -26,6 +30,9 @@ const PropertyPreview = ({ property }) => {
                     parking_lot={ parking_lot }
                 />
             </div>
+            <Button
+                to={ urlSlug( name ) }
+            >Ver propiedad</Button>
         </Card>
     );
 }
