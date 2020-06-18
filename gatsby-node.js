@@ -15,6 +15,12 @@ exports .createPages = async ({ actions, graphql, reporter }) => {
     /** GraphQL Query */
     const response = await graphql( `
         query {
+            allStrapiPages {
+                nodes {
+                  id
+                  title
+                }
+            }
             allStrapiRealEstate {
                 nodes {
                     id
@@ -29,9 +35,24 @@ exports .createPages = async ({ actions, graphql, reporter }) => {
         reporter .panic( 'No se obtuvo resultados', response .errors );
     }
 
-    const registers = response .data .allStrapiRealEstate .nodes;
+    const 
+        pages = response .data .allStrapiPages .nodes,
+        registers = response .data .allStrapiRealEstate .nodes;
 
     // console .log( 'createPages', registers );
+
+    /** Recorre cada registro obtenido */
+    pages .forEach( page => {
+
+        /** Crea páginas dinámicamente */
+        actions .createPage({
+            path: urlSlug( page .title ),                                   // Convierte un string en un slug y asigna como ruta para la nueva página
+            component: require .resolve( './src/components/page/Page.js' ), // Componente que renderiza la apariencia de la página (No olvidar la extensión del archivo o fallará)
+            context: {                                                      // Valores que se van a pasar al componente que renderiza la apariencia
+                id: page .id
+            }
+        });
+    });
 
     /** Recorre cada registro obtenido */
     registers .forEach( realEstate => {
