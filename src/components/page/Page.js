@@ -4,6 +4,7 @@ import Image from 'gatsby-image';
 
 /** Style Components */
 import Content from '../style/Content';
+import PropertiesList from '../ui/PropertiesList';
 
 /** Components */
 import MainLayout from '../layout/MainLayout';
@@ -46,6 +47,12 @@ const Page = ({ data: {  allStrapiPages: { nodes } } }) => {
                     />
                     <p>{ content }</p>
                 </Content>
+
+                {/** Despliega componente si el titulo de la pagina coincide */}
+                { title .toLowerCase() === 'propiedades' && (
+                    <PropertiesList />
+                )}
+
             </main>
         </MainLayout>
     );
