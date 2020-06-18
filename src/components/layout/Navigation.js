@@ -38,11 +38,11 @@ const Navigation = () => {
     return(
         <Nav>
             <NavLink 
-                to="/us"
+                to="/nosotros"
                 activeClassName="current-page"
             >Nosotros</NavLink>
             <NavLink 
-                to="/real-estate"
+                to="/propiedades"
                 activeClassName="current-page"
             >Propiedades</NavLink>
         </Nav>

@@ -1,4 +1,9 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import Image from 'gatsby-image';
+
+/** Style Components */
+import Content from '../style/Content';
 
 /** Components */
 import MainLayout from '../layout/MainLayout';
@@ -28,12 +33,20 @@ const Page = ({ data: {  allStrapiPages: { nodes } } }) => {
     console .log( 'Page', nodes );
 
     const 
-        { title, content } = nodes[ 0 ];
+        { title, content, image } = nodes[ 0 ];
 
     return( 
         <MainLayout>
-            <h1>{ title }</h1>
-            <p>{ content }</p>
+            <main>
+                <h1>{ title }</h1>
+                <Content>  
+                    <Image 
+                        fluid={ image .sharp .fluid }
+                        alt={ title }
+                    />
+                    <p>{ content }</p>
+                </Content>
+            </main>
         </MainLayout>
     );
 }
