@@ -11,13 +11,15 @@ import PropertyPreview from './PropertyPreview';
 
 /** Hooks */
 import useProperties from '../../hooks/useProperties';
+import useFilter from '../../hooks/useFilter';
 
 /** Component */
 const PropertiesList = () => {
 
     const 
         allProperties = useProperties(),                    // Get Data (Hook)               
-        [ properties, setProperties ] = useState([]);       // Define State
+        [ properties, setProperties ] = useState([]),       // Define State
+        { filterUI } = useFilter();                         // Hook Selector para filtrar propiedades
 
     /** Tracking State */
     useEffect( () => {
@@ -28,6 +30,8 @@ const PropertiesList = () => {
         <main id="properties-list">
             <h1>Nuestras propiedades</h1>
             
+            { filterUI() }
+
             { ! properties
                 ?   <p>No hay propiedades disponibles</p>
                 :   <ul className={ prpListStyle .properties }>
