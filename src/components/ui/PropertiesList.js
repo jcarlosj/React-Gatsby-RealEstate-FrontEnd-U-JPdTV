@@ -19,7 +19,9 @@ const PropertiesList = () => {
     const 
         allProperties = useProperties(),                    // Get Data (Hook)               
         [ properties, setProperties ] = useState([]),       // Define State
-        { filterUI } = useFilter();                         // Hook Selector para filtrar propiedades
+        { selectedCategory, filterUI } = useFilter();                         // Hook Selector para filtrar propiedades
+
+    console .log( 'PropertiesList (selectedCategory)', selectedCategory );
 
     /** Tracking State */
     useEffect( () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 /** Style Component */
@@ -6,6 +6,9 @@ import Form from '../components/style/Form';
 
 /** Hook */
 const useFilter = () => {
+
+    /** Define State */
+    const [ selectedCategory, setselectedCategory ] = useState( '' ); 
 
     /** GraphQL Query */
     const response = useStaticQuery( graphql `
@@ -25,7 +28,10 @@ const useFilter = () => {
     
     const filterUI = () => (        // Return Implicito
         <Form>
-            <select>
+            <select
+                onChange={ event => setselectedCategory( event .target .value ) }
+                value={ selectedCategory }
+            >
                 <option value="">filtrar</option>
                 { categories .map( option => (
                     <option 
@@ -38,7 +44,8 @@ const useFilter = () => {
     );
 
     return {
-        filterUI
+        selectedCategory,   // State
+        filterUI            // Functionality
     }
 
 }
