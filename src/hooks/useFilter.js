@@ -1,6 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+/** Style Component */
+import Form from '../components/style/Form';
+
 /** Hook */
 const useFilter = () => {
 
@@ -21,9 +24,9 @@ const useFilter = () => {
     const categories = response .allStrapiCategories .nodes;
     
     const filterUI = () => (        // Return Implicito
-        <form>
+        <Form>
             <select>
-                <option value="">Filtrar</option>
+                <option value="">filtrar</option>
                 { categories .map( option => (
                     <option 
                         key={ option .id }
@@ -31,7 +34,7 @@ const useFilter = () => {
                     >{ option .name }</option>
                 )) }
             </select>
-        </form>
+        </Form>
     );
 
     return {
