@@ -18,15 +18,21 @@ const PropertiesList = () => {
 
     const 
         allProperties = useProperties(),                    // Get Data (Hook)               
-        [ properties, setProperties ] = useState([]),       // Define State
-        { selectedCategory, filterUI } = useFilter();                         // Hook Selector para filtrar propiedades
+        [ properties ] = useState( allProperties ),         // Define State
+        [ filteredProperties, setFilteredProperties ] = useState( [] ),      // Define State
+        { selectedCategory, filterUI } = useFilter();       // Hook Selector para filtrar propiedades
 
     console .log( 'PropertiesList (selectedCategory)', selectedCategory );
 
     /** Tracking State */
     useEffect( () => {
-        setProperties( allProperties );
-    }, [] );
+        if( selectedCategory ) {
+            const filtered = properties .filter( realEstate => ( null !== realEstate .category && selectedCategory === realEstate .category .name ) );
+            setFilteredProperties( filtered );      // Update State
+        } else {
+            setFilteredProperties( allProperties );
+        }
+    }, [ selectedCategory ] );
 
     return (
         <main id="properties-list">
@@ -34,11 +40,11 @@ const PropertiesList = () => {
             
             { filterUI() }
 
-            { ! properties
+            { ! filteredProperties
                 ?   <p>No hay propiedades disponibles</p>
                 :   <ul className={ prpListStyle .properties }>
                         { 
-                            properties .map( property => (
+                            filteredProperties .map( property => (
                                 <PropertyPreview 
                                     key={ property .id }
                                     property={ property }

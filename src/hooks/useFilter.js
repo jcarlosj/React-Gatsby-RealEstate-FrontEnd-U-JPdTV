@@ -8,7 +8,7 @@ import Form from '../components/style/Form';
 const useFilter = () => {
 
     /** Define State */
-    const [ selectedCategory, setselectedCategory ] = useState( '' ); 
+    const [ selectedCategory, setSelectedCategory ] = useState( '' ); 
 
     /** GraphQL Query */
     const response = useStaticQuery( graphql `
@@ -29,7 +29,7 @@ const useFilter = () => {
     const filterUI = () => (        // Return Implicito
         <Form>
             <select
-                onChange={ event => setselectedCategory( event .target .value ) }
+                onChange={ event => setSelectedCategory( event .target .value ) }
                 value={ selectedCategory }
             >
                 <option value="">filtrar</option>
@@ -39,6 +39,7 @@ const useFilter = () => {
                         value={ option .name }
                     >{ option .name }</option>
                 )) }
+                <option value="uncategorized">sin categoria</option>
             </select>
         </Form>
     );
