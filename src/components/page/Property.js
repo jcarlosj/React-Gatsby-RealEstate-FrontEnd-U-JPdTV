@@ -2,6 +2,10 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
+/** Style Components */
+import Content from '../style/Content';
+import Sidebar from '../style/Sidebar';
+
 /** Components */
 import MainLayout from '../layout/MainLayout';
 import Icons from '../ui/Icons';
@@ -46,7 +50,7 @@ const Property = ({ data: {  allStrapiRealEstate: { nodes } } }) => {
     return( 
         <MainLayout>
             <h1>{ name }</h1>
-            <div>
+            <Content>
                 <main>
                     <Image 
                         fluid={ picture .sharp .fluid }
@@ -54,21 +58,29 @@ const Property = ({ data: {  allStrapiRealEstate: { nodes } } }) => {
                     />
                     <p>{ description }</p>
                 </main>
-                <aside>
+                <Sidebar>
                     <p className="price">$ { price }</p>
                     <Icons 
                         rooms={ rooms }
                         bathrooms={ bathrooms }
                         parking_lot={ parking_lot }
                     />
-                    <div>
-                        <h2>Agente comercial</h2>
-                        <p>{ agent .name }</p>
-                        <p>Teléfono: { agent .phone } </p>
-                        <p>Email: { agent .email } </p>
+                    <div className="agent">
+                        { agent
+                            ?   <>
+                                    <h2>Agente comercial</h2>
+                                    <p>{ agent .name }</p>
+                                    <p>Teléfono: { agent .phone } </p>
+                                    <p>Email: { agent .email } </p>
+                                </>
+                            :   <>   
+                                    <h2>Agente comercial</h2>
+                                    <p>Por asignar </p>
+                                </>
+                        }                    
                     </div>
-                </aside>
-            </div>
+                </Sidebar>
+            </Content>
         </MainLayout>
     );
 }
